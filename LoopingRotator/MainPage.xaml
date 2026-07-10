@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Rotator;assembly=Syncfusion.Maui.Rotator"
+             xmlns:viewModel="clr-namespace:LoopingRotator"
+             x:Class="LoopingRotator.MainPage">
+    <ContentPage.BindingContext>
+        <viewModel:RotatorViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <syncfusion:SfRotator ItemsSource="{Binding ImageCollection}" EnableLooping="True" NavigationStripMode="Dots">
+            <syncfusion:SfRotator.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Border StrokeThickness="0" StrokeShape="RoundRectangle 20">
+                            <Image Source="{Binding Image}" Aspect="AspectFit"/>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfRotator.ItemTemplate>
+        </syncfusion:SfRotator>
+    </Grid>
+</ContentPage>
